@@ -11,7 +11,7 @@ describe("Counter.vue", () => {
     expect(wrapper.text()).toMatch(msg);
   });
 
-  test("counter check", async() => {
+  test("test counter check", async() => {
     const wrapper = mount(Counter, {
       propsData: {}
     });
