@@ -39,10 +39,18 @@ export default class Counter extends Vue {
   };
   add() {
     this.$set(this.state, "num", this.state.num + 1);
+    this.$store.dispatch("show")
+    setTimeout(()=>{
+      this.$store.dispatch("hide")
+    }, 500)
   }
 
   minus() {
     this.$set(this.state, "num", this.state.num - 1);
+    this.$store.dispatch("show")
+    setTimeout(()=>{
+      this.$store.dispatch("hide")
+    }, 500)
   }
 }
 </script>

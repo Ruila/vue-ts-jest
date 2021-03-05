@@ -3,19 +3,18 @@
     <v-main>
       <router-view />
     </v-main>
+    <loading />
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Vue } from "vue-property-decorator";
+import Loading from "./components/Loading.vue"; 
 
-export default Vue.extend({
-  name: "App",
-
-  components: {},
-
-  data: () => ({
-    //
-  })
-});
+@Component({
+  components: {
+    Loading
+  }
+})
+export default class App extends Vue {}
 </script>
