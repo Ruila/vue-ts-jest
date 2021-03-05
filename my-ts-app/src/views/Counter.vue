@@ -25,6 +25,7 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import Add from "../components/counter/add.vue";
 import Minus from "../components/counter/minus.vue";
+import store from "../store/index";
 
 @Component({
   components: {
@@ -39,17 +40,17 @@ export default class Counter extends Vue {
   };
   add() {
     this.$set(this.state, "num", this.state.num + 1);
-    this.$store.dispatch("show")
+    store.dispatch("show")
     setTimeout(()=>{
-      this.$store.dispatch("hide")
+      store.dispatch("hide")
     }, 500)
   }
 
   minus() {
     this.$set(this.state, "num", this.state.num - 1);
-    this.$store.dispatch("show")
+    store.dispatch("show")
     setTimeout(()=>{
-      this.$store.dispatch("hide")
+      store.dispatch("hide")
     }, 500)
   }
 }
