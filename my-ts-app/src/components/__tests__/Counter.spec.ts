@@ -4,6 +4,7 @@ import Add from "../counter/add.vue";
 import Minus from "../counter/minus.vue";
 import store from "../../store/index";
 import Loading from "../Loading.vue";
+import sinon from "sinon";
 
 describe("Counter.vue", () => {
   const dispatch = store.dispatch;
@@ -26,6 +27,7 @@ describe("Counter.vue", () => {
   });
 
   it("test counter add count", () => {
+    // const clock = sinon.useFakeTimers();
     const wrapper = mount(Counter, {
       propsData: {}
     });
@@ -34,6 +36,7 @@ describe("Counter.vue", () => {
     expect(setTimeout).toBeCalledTimes(1);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 500);
     jest.advanceTimersByTime(500);
+    // clock.tick(500);
     expect(store.state.loading).toBe(false);
     expect(wrapper.vm.$data.state.num).toBe(1);
   })
