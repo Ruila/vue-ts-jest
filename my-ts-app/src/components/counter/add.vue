@@ -11,8 +11,8 @@ import { Component, Vue } from "vue-property-decorator";
   name: "Add"
 })
 export default class Add extends Vue {
-    add () {
-        this.$emit("add")
-    }
+  add() {
+    this.$emit("add");
+  }
 }
 </script>
